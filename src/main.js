@@ -15,6 +15,12 @@ import '@/assets/icons/iconfont.css'
 import TreeTable from 'tree-table-vue'
 import VOrgTree from 'v-org-tree'
 import 'v-org-tree/dist/v-org-tree.css'
+// 若是没有开启Devtools工具，在开发环境中开启，在生产环境中关闭
+if (process.env.NODE_ENV == 'development') {
+  Vue.config.devtools = true
+} else {
+  Vue.config.devtools = false
+}
 // 实际打包时应该不引入mock
 /* eslint-disable */
 if (process.env.NODE_ENV !== 'production') require('@/mock')
